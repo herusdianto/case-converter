@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Heru Rusdianto">
+    <title>Case Converter - Convert Text Cases</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+</head>
+<body>
+    <div class="topbar">
+        <a href="https://github.com/herusdianto" class="github-link" target="_blank" rel="noopener noreferrer" title="GitHub Repository">
+            <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.01.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.11.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.19 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z" fill="currentColor"/>
+            </svg>
+        </a>
+        <div class="theme-toggle">
+            <button id="theme-switch" aria-label="Toggle dark/light mode" class="theme-toggle-btn">
+                <span id="theme-icon"></span>
+            </button>
+        </div>
+    </div>
+
+    <header>
+        <h1>Case Converter</h1>
+        <p>Convert your text to different cases with ease</p>
+        <p class="client-side-note"><strong>100% Client-side:</strong> All processing happens in your browser. <u>No data is sent to any server.</u></p>
+    </header>
+
+    <div class="container">
+        <div class="main-content">
+            <!-- Input Section -->
+            <div class="input-section">
+                <h2>Input Text</h2>
+                <textarea id="input-text" class="input-textarea" placeholder="Enter or paste your text here...">Hello World! This is a test string for case conversion.</textarea>
+            </div>
+
+            <!-- Output Section -->
+            <div class="output-section">
+                <div class="output-header">
+                    <h2>Output</h2>
+                    <button class="copy-btn" id="copy-btn" title="Copy to clipboard">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                        </svg>
+                        <span>Copy</span>
+                    </button>
+                </div>
+                <div class="case-select-wrapper">
+                    <select id="case-select" class="case-select">
+                        <option value="">Select a case...</option>
+                        <option value="camelCase">camelCase (helloWorld)</option>
+                        <option value="PascalCase">PascalCase (HelloWorld)</option>
+                        <option value="snake_case">snake_case (hello_world)</option>
+                        <option value="kebab-case">kebab-case (hello-world)</option>
+                        <option value="UPPERCASE">UPPERCASE (HELLO WORLD)</option>
+                        <option value="lowercase">lowercase (hello world)</option>
+                        <option value="Title Case">Title Case (Hello World)</option>
+                        <option value="Sentence case">Sentence case (Hello world)</option>
+                        <option value="CONSTANT_CASE">CONSTANT_CASE (HELLO_WORLD)</option>
+                        <option value="dot.case">dot.case (hello.world)</option>
+                        <option value="path/case">path/case (hello/world)</option>
+                        <option value="Header-Case">Header-Case (Hello-World)</option>
+                        <option value="sWAP cASE">sWAP cASE (hELLO wORLD)</option>
+                        <option value="aLtErNaTiNg CaSe">aLtErNaTiNg CaSe (hElLo WoRlD)</option>
+                        <option value="InVeRsE cAsE">InVeRsE cAsE (hELLO wORLD)</option>
+                    </select>
+                </div>
+                <textarea id="output-text" class="output-textarea" readonly placeholder="Converted text will appear here..."></textarea>
+            </div>
+        </div>
+
+        <!-- Status Messages -->
+        <div id="status" class="status hidden"></div>
+    </div>
+
+    <footer>
+        <p>Created by <a href="https://herusdianto.github.io/" target="_blank" rel="noopener noreferrer">Heru Rusdianto</a> with AI Assistance</p>
+        <p class="copyright">
+            © <span id="currentYear"></span> All rights reserved
+        </p>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
